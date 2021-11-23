@@ -1,6 +1,7 @@
-import { Roles, Gender } from './../../../../../../esercizi typescript & angular/users';
+import { Roles, Gender, IUser } from './user'
 
-export const USERS: Object[] = [{
+export const USERS: IUser[] = [
+  {
   id: 3487,
   name: 'Mario',
   surname: 'Rossi',

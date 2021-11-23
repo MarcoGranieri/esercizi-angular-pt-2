@@ -1,1 +1,8 @@
-<p>user-single works!</p>
+<div>
+    <img src={{user.profilePhotoUrl}} style="width: 30px; height: 30px;">
+    <strong>
+  {{user.name}}
+  {{user.surname}}
+  </strong> {{user.age}} {{user.address?.city}}
+    <button>delete</button>
+</div>

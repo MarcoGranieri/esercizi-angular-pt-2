@@ -24,7 +24,7 @@ export interface Address {
   postalCode: string;
 }
 
-export interface Object {
+export interface IUser {
   id: number;
   name: string;
   surname: string;
@@ -34,7 +34,7 @@ export interface Object {
   role: Roles;
   username: string;
   profilePhotoUrl: string;
-  companies: Companies[];
+  companies?: Companies[];
   gender: Gender;
 }
 
