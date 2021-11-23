@@ -1,8 +1,13 @@
-<div>
-    <img src={{user.profilePhotoUrl}} style="width: 30px; height: 30px;">
-    <strong>
-  {{user.name}}
-  {{user.surname}}
-  </strong> {{user.age}} {{user.address?.city}}
-    <button>delete</button>
+<div class="d-flex justify-content-between p-1">
+    <div>
+        <img src={{user.profilePhotoUrl}} style="width: 30px; height: 30px;">
+        <strong>
+        {{user.name}}
+        {{user.surname}}
+        </strong> {{user.age}} {{user.address?.city}}
+    </div>
+    <div>
+        <button (click)="userToDelete(user)">delete</button>
+        <button (click)="userToSelect(user)">details</button>
+    </div>
 </div>

@@ -1,1 +1,20 @@
-<p>user-detail works!</p>
+<p class="text-center text-white mt-2">user-detail.component</p>
+<p>id: {{user.id}}</p>
+<p>name: {{user.name}}</p>
+<p>surname: {{user.surname}}</p>
+<p>age: {{user.age}}</p>
+<p>Date of birth: {{user.dateOfBirth | date:'dd MMM yyyy'}}</p>
+<p><strong>Address:</strong></p>
+<p>city: {{user.address?.city}}</p>
+<p>street: {{user.address?.street}}</p>
+<p>postal code: {{user.address?.postalCode}}</p>
+<p>role: {{user.role}}</p>
+<p>username: {{user.username}}</p>
+<img src={{user.profilePhotoUrl}} alt="" style="width: 150px;">
+<p>gender: {{user.gender}}</p>
+<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae temporibus sit impedit beatae facere dicta ullam magnam nihil dolor alias accusantium quidem exercitationem doloremque vitae, nostrum corporis veritatis nulla itaque.</p>
+<button (click)="closedDetails.emit()">Chiudi</button>
+<!-- <p><strong>company: {{user.companies[0].name}}</strong></p>
+<p>description: {{user.companies[0].description}}</p>
+<p><strong>company: {{user.companies[1].name}}</strong></p>
+<p>description: {{user.companies[1].description}}</p> -->

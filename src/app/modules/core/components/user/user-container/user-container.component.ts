@@ -1,3 +1,5 @@
+import { IUser } from './../../../../shared/models/user';
+import { USERS } from './../../../../shared/models/mock';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserContainerComponent implements OnInit {
 
+  users = USERS;
+  selectedUser! : IUser;
+  viewDetails : boolean = false;
+
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  selectFunc(user: IUser) {
+    this.viewDetails = true;
+    this.selectedUser = user;
+  }
+
+  closeDetailsFunc() {
+    this.viewDetails = false;
+  }
 }

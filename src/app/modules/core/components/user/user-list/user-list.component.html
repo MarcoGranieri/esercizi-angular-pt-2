@@ -1,8 +1,6 @@
-<div class="d-flex flex-column align-items-center bg-success">
-    <p class="text-white text-center mt-2">user-list.component</p>
-    <ol>
-        <li class="mb-2" *ngFor="let user of users">
-            <app-user-single [user]="user"></app-user-single>
-        </li>
-    </ol>
-</div>
+<p class="text-white text-center mt-2">user-list.component</p>
+<ol>
+    <li class="mb-2" *ngFor="let user of users">
+        <app-user-single [user]="user" (deletedElement)="deleteFunc($event)" (selectedElement)="selectedElement.emit($event)"></app-user-single>
+    </li>
+</ol>

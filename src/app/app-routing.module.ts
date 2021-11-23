@@ -7,6 +7,7 @@ import { NotFoundComponent } from './modules/shared/not-found/not-found.componen
 
 const routes: Routes = [
   {path : 'users', component: UserContainerComponent},
+  {path : '', component: UserContainerComponent},
   {path : 'order', component: OrderContainerComponent},
   {path : '**', component: NotFoundComponent}
 ];
