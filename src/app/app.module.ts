@@ -10,7 +10,6 @@ import { UserDetailComponent } from './modules/core/components/user/user-detail/
 import { OrderContainerComponent } from './modules/core/components/order/order-container/order-container.component';
 import { OrderListComponent } from './modules/core/components/order/order-list/order-list.component';
 import { OrderDetailComponent } from './modules/core/components/order/order-detail/order-detail.component';
-import { OrderSigleComponent } from './modules/core/components/order/order-sigle/order-sigle.component';
 import { OrderSingleComponent } from './modules/core/components/order/order-single/order-single.component';
 import { UserSingleComponent } from './modules/shared/user-single/user-single.component';
 import { NavbarComponent } from './modules/shared/navbar/navbar.component';
@@ -25,7 +24,6 @@ import { NotFoundComponent } from './modules/shared/not-found/not-found.componen
     OrderContainerComponent,
     OrderListComponent,
     OrderDetailComponent,
-    OrderSigleComponent,
     OrderSingleComponent,
     UserSingleComponent,
     NavbarComponent,

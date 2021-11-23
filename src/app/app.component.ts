@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Roles, Gender} from './modules/shared/models/user';
 
 @Component({
   selector: 'app-root',
@@ -8,3 +9,4 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'angularParte2';
 }
+

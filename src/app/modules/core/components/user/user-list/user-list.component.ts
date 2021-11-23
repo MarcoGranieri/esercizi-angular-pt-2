@@ -1,3 +1,4 @@
+import { USERS } from './../../../../shared/models/mock';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./user-list.component.scss']
 })
 export class UserListComponent implements OnInit {
+
+  users = USERS;
 
   constructor() { }
 
