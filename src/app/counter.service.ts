@@ -14,14 +14,16 @@ export class CounterService {
   returnCounter () {
     if (this.counter >= 0 ) {
       return this.counter;
-    } else alert ('error');
+    } else
+    this.counter = 0;
+    return 'error';
   }
 
   addCounter () {
-    console.log(this.counter -= this.defaultValue);
+    return this.counter += this.defaultValue;
   }
 
   subCounter () {
-     console.log(this.counter -= this.defaultValue);
+     return this.counter -= this.defaultValue;
   }
 }
