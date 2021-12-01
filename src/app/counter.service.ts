@@ -18,7 +18,7 @@ export class CounterService {
   }
 
   addCounter () {
-    console.log(this.counter -= this.defaultValue);
+    console.log(this.counter += this.defaultValue);
   }
 
   subCounter () {
