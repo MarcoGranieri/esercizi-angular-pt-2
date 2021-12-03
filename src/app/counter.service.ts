@@ -5,9 +5,9 @@ import { Injectable } from '@angular/core';
 })
 export class CounterService {
 
-  private counter = 0;
+  private counter: number = 0;
 
-  defaultValue = 1;
+  defaultValue: number = 1;
 
   constructor() { }
 
@@ -19,11 +19,11 @@ export class CounterService {
     return 'error';
   }
 
-  addCounter () {
-    return this.counter += this.defaultValue;
+  addCounter (value: number) {
+    return this.counter += value;
   }
 
-  subCounter () {
-     return this.counter -= this.defaultValue;
+  subCounter (value: number) {
+    return this.counter -= value;
   }
 }

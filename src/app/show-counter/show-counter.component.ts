@@ -9,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 export class ShowCounterComponent implements OnInit {
 
 
-  constructor(public counter : CounterService) { }
+
+
+  constructor(private counterService : CounterService) { }
 
   ngOnInit(): void {
+  }
+
+  returnCounterTs() {
+    return this.counterService.returnCounter();
   }
 
 }
