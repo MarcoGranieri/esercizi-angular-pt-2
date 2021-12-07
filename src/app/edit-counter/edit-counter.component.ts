@@ -1,3 +1,4 @@
+import { CounterService } from './../counter.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCounterComponent implements OnInit {
 
-  constructor() { }
+  value : number = 1;
+
+  constructor(private counterService : CounterService) { }
 
   ngOnInit(): void {
+
+  }
+
+  addCounterTs (value : number) {
+    this.counterService.addCounter(value);
+  }
+
+  subCounterTs (value : number) {
+    this.counterService.subCounter(value);
   }
 
 }

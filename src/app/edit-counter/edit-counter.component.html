@@ -1,1 +1,3 @@
-<p>edit-counter works!</p>
+<input class="text-center" type="number" min="1" [(ngModel)]="value" placeholder="Inserire valore">
+<button (click)="addCounterTs(value)">aggiungi</button>
+<button (click)="subCounterTs(value)">sottrai</button>

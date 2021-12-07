@@ -6,11 +6,22 @@ import { BehaviorSubject, Observable, Subject } from 'rxjs';
 })
 export class CounterService {
 
-  counter: Subject<Number> = new Subject<Number>();
+  private counter : number = 0;
+  counterSubject = new BehaviorSubject<number>(0); // chiedere perché ?!
 
   constructor() { }
 
-  returnCounter() : Observable<Number> {
-    return this.counter;
+  returnCounter() {
+    return this.counterSubject.asObservable();
+  }
+
+  addCounter (value: number = 1) : void {
+    this.counterSubject.next(this.counter += value);
+  }
+
+  subCounter (value: number = 1) : any {
+    if (this.counter >= 0) {
+      this.counterSubject.next(this.counter-= value);
+    } else this.counterSubject.error('error');
   }
 }
