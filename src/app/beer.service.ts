@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, BehaviorSubject } from 'rxjs';
-import { BEERMENU, IBeer } from './models/mock';
-import { find } from 'rxjs/operators';
+import { Beer, BEERMENU, IBeer } from './models/mock';
+import { map, find } from 'rxjs/operators';
 
 
 @Injectable({
@@ -15,18 +15,21 @@ export class BeerService {
 
   constructor() { }
 
-  showBeers() {
+  showBeers() : Observable<Beer[]> {
     return this.beerMenu$.asObservable();
   }
 
-  getBeerById(id: number) {
-    // let beerId = this.beerMenu.find(beer => beer.id ===  id);
-    // return beerId;
-
-    this.beerMenu$.pipe(
-      // find(beer => beer.id === id)
+  getBeerById(id: number) : Observable<Beer | undefined> {
+    return this.beerMenu$.pipe(
+      map((response : IBeer[]) => response.find(beer => beer.id === id) )
     )
 
+  }
+
+  getBeer(name: string, type: string) : Observable<Beer | undefined> {
+    return this.beerMenu$.pipe(
+      map((response : IBeer[]) => response.find((beer: IBeer) => beer.name === name && beer.type === type))
+    )
   }
 
 

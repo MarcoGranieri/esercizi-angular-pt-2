@@ -4,6 +4,25 @@ export interface IBeer {
   name: string,
   price: number }
 
+export class Beer {
+
+  protected constructor(
+      public id = 0,
+      public type = '',
+      public name = '',
+      public price = 0
+  ) { }
+
+  public static Build(beer: IBeer): Beer {
+      return new this(
+          beer.id,
+          beer.type,
+          beer.name,
+          beer.price
+      );
+  }
+}
+
 export const BEERMENU : IBeer[] = [
   {
     id: 1,
@@ -66,6 +85,8 @@ export const BEERMENU : IBeer[] = [
     price: 3,
   }
 ]
+
+
 
 
 

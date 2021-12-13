@@ -1,0 +1,23 @@
+<form #form='ngForm'>
+    <select required name="beersName" id="beersName" [(ngModel)]="name">
+      <option selected disabled>seleziona una birra</option>
+      <option *ngFor="let beer of beerMenu" value={{beer.name}}>{{beer.name}}</option>
+    </select>
+
+    <select required name="beersSize" id="beersSize" [(ngModel)]="type">
+      <option selected disabled>Size</option>
+      <option value="small">Small</option>
+      <option value="medium">Medium</option>
+    </select>
+    <button (click)="getBeer(name!, type!)" [disabled]="form.invalid">Cerca</button>
+</form>
+
+
+
+<div *ngIf="selectedBeer" class="card mt-5" style="width: 18rem;">
+    <div class="card-body">
+        <h5 class="card-title">{{selectedBeer?.name}}</h5>
+        <p class="card-text">{{selectedBeer?.type}}</p>
+        <p class="card-text">{{selectedBeer?.price | currency: "EUR"}}</p>
+    </div>
+</div>

@@ -1,0 +1,29 @@
+angular schematics
+importare httpclientmodule per le chiamate di rete
+get : quando vogliamo chiedere dati al backend e lui ce li restituisce
+post : quando noi abbiamo già un dato e vogliamo inviarlo al backend per salvarlo
+possono essere fatte in vari posti, si preferisce inserirle però all'interno dei servizi.
+per fare la chiamata di rete:
+
+nel costruttore : private readonly http: httpclient
+
+esempi di metodi
+
+getCocktails() : observable<any> {
+  return this.http.get<any>('urldellachiamata') // assicurarsi che sia un json
+}
+tipo dopo chiamata (tipo di dato che ci aspettiamo dal backend)
+il tipo invece nelle parentesi dell'observable non deve essere un interfaccia nella maggior parte dei casi
+ma un modello di dati (creare una classe uguale all'interfaccia)
+
+builder design patter :
+
+public static build (cocktail: 'nome dell'interfaccia'): 'modello' {
+  return new this (
+    contail.(chiave1)
+    contail.(chiave2)
+    contail.(chiave3)
+  )
+}
+
+chiave api : b32c09e25b373fea02b91733c2cea846
