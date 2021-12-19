@@ -1,3 +1,4 @@
+import { Covid } from './shared/models/interface';
 import { CovidService } from './../covid.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -10,17 +11,22 @@ export class CovidComponent implements OnInit {
 
   numberOfProperties!: number;
   allProperties! : string[];
+  allValues! : string[];
+
 
   constructor(private readonly covidService : CovidService) { }
 
   ngOnInit() {
     this.covidService.getSumOfProperties().subscribe(
-      res => this.numberOfProperties = res
+      res => this.numberOfProperties = Object.keys(res).length
     )
 
     this.covidService.getAllProperties().subscribe(
-      res => this.allProperties = res
+      res => this.allProperties = Object.keys(res)
+    )
+
+    this.covidService.getAllValues().subscribe(
+      res => this.allValues = Object.values(res).map(res => res.Path)
     )
   }
-
 }
