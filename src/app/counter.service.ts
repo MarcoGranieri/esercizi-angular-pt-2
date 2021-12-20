@@ -6,15 +6,17 @@ import { Injectable } from '@angular/core';
 export class CounterService {
 
   private counter: number = 0;
+  private error: boolean = false;
 
   constructor() { }
 
   returnCounter () {
-    if (this.counter >= 0 ) {
-      return this.counter;
-    } else
-    this.counter = 0;
-    return 'error';
+    return this.counter;
+    // if (this.counter >= 0 ) {
+    //   return this.counter;
+    // } else
+    // this.counter = 0;
+    // return 'error';
   }
 
   addCounter (value: number = 1) {
@@ -22,6 +24,8 @@ export class CounterService {
   }
 
   subCounter (value: number = 1) {
-    return this.counter -= value;
+    if(value > this.counter) {
+      return 'error';
+    } else return this.counter -= value;
   }
 }

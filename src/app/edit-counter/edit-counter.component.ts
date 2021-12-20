@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EditCounterComponent implements OnInit {
 
-  defaultValueTs : number = 1;
+  defaultValue : number = 1;
 
   constructor(private counterService : CounterService) { }
 
@@ -17,11 +17,11 @@ export class EditCounterComponent implements OnInit {
   }
 
   addCounterTs() {
-    this.counterService.addCounter();
+    this.counterService.addCounter(this.defaultValue);
   }
 
   subCounterTs() {
-    this.counterService.subCounter();
+    this.counterService.subCounter(this.defaultValue);
   }
 
 }
