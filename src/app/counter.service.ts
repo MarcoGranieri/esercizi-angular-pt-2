@@ -7,8 +7,6 @@ export class CounterService {
 
   private counter: number = 0;
 
-  defaultValue: number = 1;
-
   constructor() { }
 
   returnCounter () {
@@ -19,11 +17,11 @@ export class CounterService {
     return 'error';
   }
 
-  addCounter (value: number) {
+  addCounter (value: number = 1) {
     return this.counter += value;
   }
 
-  subCounter (value: number) {
+  subCounter (value: number = 1) {
     return this.counter -= value;
   }
 }
