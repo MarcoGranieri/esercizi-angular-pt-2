@@ -11,22 +11,8 @@ export class CovidService {
 
   constructor(private readonly http: HttpClient) { }
 
-  getSumOfProperties(): Observable<Covid> {
+  get(): Observable<Covid> {
     return this.http.get<ICovid>('https://api.covid19api.com/')
-    .pipe(
-      map(res => Covid.Build(res))
-    )
-  }
-
-  getAllProperties(): Observable<Covid> {
-    return this.http.get<ICovid>('https://api.covid19api.com/')
-    .pipe(
-      map(res => Covid.Build(res))
-    )
-  }
-
-  getAllValues() {
-    return this.http.get<any>('https://api.covid19api.com/')
     .pipe(
       map(res => Covid.Build(res))
     )

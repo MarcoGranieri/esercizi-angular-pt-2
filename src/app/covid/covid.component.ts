@@ -17,16 +17,12 @@ export class CovidComponent implements OnInit {
   constructor(private readonly covidService : CovidService) { }
 
   ngOnInit() {
-    this.covidService.getSumOfProperties().subscribe(
-      res => this.numberOfProperties = Object.keys(res).length
-    )
-
-    this.covidService.getAllProperties().subscribe(
-      res => this.allProperties = Object.keys(res)
-    )
-
-    this.covidService.getAllValues().subscribe(
-      res => this.allValues = Object.values(res).map(res => res.Path)
+    this.covidService.get().subscribe(
+      res =>
+      {return this.numberOfProperties = Object.keys(res).length,
+        this.allProperties = Object.keys(res),
+        this.allValues = Object.values(res).map(res => res.Path)
+      }
     )
   }
 }
