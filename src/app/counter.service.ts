@@ -11,12 +11,11 @@ export class CounterService {
   constructor() { }
 
   returnCounter () {
-    return this.counter;
-    // if (this.counter >= 0 ) {
-    //   return this.counter;
-    // } else
-    // this.counter = 0;
-    // return 'error';
+    if (this.counter >= 0 ) {
+      return this.counter;
+    } else
+    this.counter = 0;
+    return 'error';
   }
 
   addCounter (value: number = 1) {
@@ -24,8 +23,6 @@ export class CounterService {
   }
 
   subCounter (value: number = 1) {
-    if(value > this.counter) {
-      return 'error';
-    } else return this.counter -= value;
+    return this.counter -= value;
   }
 }
